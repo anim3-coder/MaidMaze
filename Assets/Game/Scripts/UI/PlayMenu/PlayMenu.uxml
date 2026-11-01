@@ -1,0 +1,50 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game/Scripts/UI/Settings/SettingsStyle.uss?fileID=7433441132597879392&amp;guid=24d13e70c70998541971a72ab547a35c&amp;type=3#SettingsStyle"/>
+    <Style src="project://database/Assets/Game/Scripts/UI/Default.uss?fileID=7433441132597879392&amp;guid=d7547f06d15fd2040b0f7e59abff3d72&amp;type=3#Default"/>
+    <ui:VisualElement name="PlayMenuRoot" class="settings-panel" style="width: auto;">
+        <ui:VisualElement name="PaginationBar" class="pagination-bar" style="align-content: auto; align-items: auto; height: 15%;">
+            <ui:Button text="Главное" name="TabButton_Main" class="pagination-button pagination-button--active">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(28063557537792)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Графика" name="TabButton_Graphics" class="pagination-button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(28155752534016)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Управление" name="TabButton_Controls" class="pagination-button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(28482983743488)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Выйти" name="TabButton_Exit" class="pagination-button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(247650635776)"/>
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="Tab_Main" class="tab-content tab-active">
+            <ui:ListView name="RoomList" item-template="project://database/Assets/Game/Scripts/UI/PlayMenu/RoomButton.uxml?fileID=9197481963319205126&amp;guid=061b3511916cbb44a8c120f44f9f6f03&amp;type=3#RoomButton" style="height: 100%; width: 100%; position: relative; font-size: 24px; color: rgb(255, 255, 255); -unity-text-outline-width: 3px; -unity-text-outline-color: rgb(255, 255, 255); -unity-text-align: middle-center;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Tab_Graphics" class="tab-content">
+            <ui:VisualElement name="Vert" style="flex-grow: 1; flex-direction: row; width: auto; height: auto; align-items: center; align-self: auto; align-content: auto; justify-content: space-between; max-height: 15%; min-height: 150px;">
+                <ui:TextField label="Name" placeholder-text="MY SERVER" name="TextField" value="MY SERVER" class="default-text-field" style="width: 50%;"/>
+                <ui:Toggle label="Is Public" name="hdrToggle" value="true" focusable="false" class="settings-toggle" style="font-size: 45px; align-self: center;"/>
+            </ui:VisualElement>
+            <ui:Button text="Применить" name="Create" enabled="true" class="default-button" style="flex-direction: column; bottom: auto; top: auto; left: auto; height: auto; min-height: 50px; max-height: 15%; margin-left: 20px; margin-right: 20px;">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(28155752534016)"/>
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="Tab_Controls" class="tab-content">
+            <ui:TextField label="Code" placeholder-text="Сapital letters only" name="TextField" max-length="5" keyboard-type="ASCIICapable" auto-correction="false" value="" class="default-text-field" style="width: auto; min-height: 50px; max-height: 15%; margin-left: 20px; margin-right: 20px;"/>
+            <ui:Button text="Применить" name="applyButton" enabled="true" class="default-button" style="flex-direction: column; bottom: auto; top: auto; left: auto; height: auto; min-height: 50px; max-height: 15%; margin-left: 20px; margin-right: 20px;">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(28155752534016)"/>
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

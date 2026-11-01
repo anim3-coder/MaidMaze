@@ -1,0 +1,25 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="PlayMenu" src="project://database/Assets/Game/Scripts/UI/PlayMenu/PlayMenu.uxml?fileID=9197481963319205126&amp;guid=ea53e3448b9ba3f4a912cb26df16ed97&amp;type=3#PlayMenu"/>
+    <ui:Template name="SettingsPanel" src="project://database/Assets/Game/Scripts/UI/Settings/SettingsPanel.uxml?fileID=9197481963319205126&amp;guid=3c2af211945bc2847aa9e5a642d6cf8f&amp;type=3#SettingsPanel"/>
+    <Style src="project://database/Assets/Game/Scripts/UI/Default.uss?fileID=7433441132597879392&amp;guid=d7547f06d15fd2040b0f7e59abff3d72&amp;type=3#Default"/>
+    <ui:VisualElement name="List" picking-mode="Position" style="flex-grow: 1; flex-direction: column; justify-content: center; align-items: stretch; width: 15%; flex-wrap: nowrap; right: 59px; bottom: 0; top: 0; left: 0; position: relative; align-self: flex-end; align-content: stretch; margin-right: 60px; margin-top: 30px; margin-bottom: 30px; margin-left: 30px; padding-right: 0; transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s;">
+        <ui:Label text="Ля чебукек" enable-rich-text="false" emoji-fallback-support="false" class="Logo" style="opacity: 1; flex-direction: column; flex-wrap: nowrap;"/>
+        <LocalizedButton text="Play" name="Play" key="play_button" class="default-button">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(107405692928)"/>
+            </Bindings>
+        </LocalizedButton>
+        <LocalizedButton text="Settings" name="Settings" key="settings_button" class="default-button">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(164297232384)"/>
+            </Bindings>
+        </LocalizedButton>
+        <LocalizedButton text="Quit" name="Quit" key="quit_button" class="default-button">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(247650635776)"/>
+            </Bindings>
+        </LocalizedButton>
+    </ui:VisualElement>
+    <ui:Instance template="PlayMenu" enabled="true" name="PlayMenu" picking-mode="Ignore" style="width: 100%; height: 100%; position: absolute;"/>
+    <ui:Instance template="SettingsPanel" name="SettingsPanel" enabled="true" picking-mode="Position" style="position: absolute; top: auto; width: 100%; height: 100%; align-self: flex-end;"/>
+</ui:UXML>

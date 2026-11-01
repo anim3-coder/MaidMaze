@@ -1,0 +1,48 @@
+/* === Внешний контейнер попапа === */
+.unity-base-dropdown__container-outer {
+    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(255, 126, 190);
+    overflow: hidden;
+    margin-top: 4px; /* отступ от поля */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* === Внутренний скролл-контейнер === */
+.unity-base-dropdown__container-inner {
+    /* Фон уже задан внешним контейнером, можно убрать */
+    background-color: transparent;
+    padding: 4px 0;
+}
+
+/* === Полоса прокрутки (скроллбар) === */
+.unity-base-dropdown__container-inner .unity-scroller--vertical {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.unity-base-dropdown__container-inner .unity-scroller__track {
+    background-color: rgb(255, 126, 190);
+    border-radius: 4px;
+}
+
+/* === Элемент списка === */
+.unity-base-dropdown__item {
+    padding: 8px 16px;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    transition: background-color 0.15s;
+}
+
+/* Наведение на элемент */
+.unity-base-dropdown__item:hover {
+    background-color: rgba(255, 126, 190, 0.3);
+}
+
+/* Выбранный элемент */
+.unity-base-dropdown__item--selected {
+    background-color: rgba(255, 126, 190, 0.6);
+    color: white;
+    font-weight: bold;
+}

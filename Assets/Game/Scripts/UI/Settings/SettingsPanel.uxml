@@ -1,0 +1,69 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game/Scripts/UI/Settings/SettingsStyle.uss?fileID=7433441132597879392&amp;guid=24d13e70c70998541971a72ab547a35c&amp;type=3#SettingsStyle"/>
+    <ui:VisualElement name="SettingsRoot" class="settings-panel" style="width: auto;">
+        <ui:VisualElement name="PaginationBar" class="pagination-bar" style="align-content: auto; align-items: auto; height: 15%;">
+            <ui:Button text="Главное" name="TabButton_Main" class="pagination-button pagination-button--active">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(394086371328)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Графика" name="TabButton_Graphics" class="pagination-button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(447710547968)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Управление" name="TabButton_Controls" class="pagination-button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(513452068864)"/>
+                </Bindings>
+            </ui:Button>
+            <ui:Button text="Выйти" name="TabButton_Exit" class="pagination-button">
+                <Bindings>
+                    <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(247650635776)"/>
+                </Bindings>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="Tab_Main" class="tab-content tab-active">
+            <ui:ScrollView class="tab-scroll">
+                <ui:DropdownField name="Language_Dropdown" choices="" index="2" focusable="false" label="Language" class="settings-dropdown" style="-unity-text-generator: standard;"/>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="Tab_Graphics" class="tab-content">
+            <ui:ScrollView class="tab-scroll">
+                <ui:DropdownField label="Render Scale" name="renderScale" choices="High,Medium,Low,Very Low" index="2" focusable="false" tabindex="13" language-direction="Inherit" class="settings-dropdown" style="-unity-text-generator: standard;">
+                    <Bindings>
+                        <ui:DataBinding property="index" data-source-path="renderScaleQuality" data-source="project://database/Assets/Resources/Settings.asset?fileID=11400000&amp;guid=2d64c267e6542624297a9f887b1f944a&amp;type=2#Settings" binding-mode="TwoWay"/>
+                    </Bindings>
+                </ui:DropdownField>
+                <ui:VisualElement name="advancedOptionsContainer" picking-mode="Position" enabled="false" style="position: relative; width: auto; height: auto;">
+                    <ui:Label text="Additional zoom settings" class="subsection-title"/>
+                    <ui:DropdownField label="Upscaling Filter" name="upscalingFilter" choices="Automatic,Bilinear,Nearest-Neighbor,FidelityFX,Spatial-Temporal" index="1" focusable="false" class="settings-dropdown">
+                        <Bindings>
+                            <ui:DataBinding property="index" data-source-path="UpscalingFilterSelection" data-source="project://database/Assets/Resources/Settings.asset?fileID=11400000&amp;guid=2d64c267e6542624297a9f887b1f944a&amp;type=2#Settings" binding-mode="TwoWay"/>
+                        </Bindings>
+                    </ui:DropdownField>
+                </ui:VisualElement>
+                <ui:DropdownField label="Anti-Aliasing" name="antiAliasing" choices="Disabled,MSAA x2,MSAA x4,MSAA x8" index="2" focusable="false" class="settings-dropdown" style="-unity-text-generator: standard;">
+                    <Bindings>
+                        <ui:DataBinding property="index" data-source-path="QualityMSAA" data-source="project://database/Assets/Resources/Settings.asset?fileID=11400000&amp;guid=2d64c267e6542624297a9f887b1f944a&amp;type=2#Settings" binding-mode="TwoWay"/>
+                    </Bindings>
+                </ui:DropdownField>
+                <ui:Toggle label="HDR" name="hdrToggle" value="false" focusable="false" class="settings-toggle">
+                    <Bindings>
+                        <ui:DataBinding property="value" data-source-path="IsAllowHDR" data-source="project://database/Assets/Resources/Settings.asset?fileID=11400000&amp;guid=2d64c267e6542624297a9f887b1f944a&amp;type=2#Settings" binding-mode="TwoWay"/>
+                    </Bindings>
+                </ui:Toggle>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="Tab_Controls" class="tab-content">
+            <ui:ScrollView class="tab-scroll">
+                <ui:Label text="Soon..." class="tab-placeholder"/>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:Button text="Применить" name="applyButton" enabled="true" class="default-button" style="flex-direction: column; bottom: auto; top: auto; left: auto; height: 10%;">
+            <Bindings>
+                <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(323554955264)"/>
+            </Bindings>
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

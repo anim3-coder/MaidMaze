@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: S Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: S
+  m_TableCollectionNameGuidString: d697420ce0149ab4aadbc783c6165e97
+  m_Entries:
+  - m_Id: 107405692928
+    m_Key: '#Play'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 164297232384
+    m_Key: '#Settings'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 247650635776
+    m_Key: '#Quit'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323554955264
+    m_Key: '#Apply'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394086371328
+    m_Key: '#Main'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 447710547968
+    m_Key: '#Graphics'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 513452068864
+    m_Key: '#Control'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28063557537792
+    m_Key: '#Search'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28155752534016
+    m_Key: "#\u0421reate"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28482983743488
+    m_Key: '#Enter'
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8418179282978996678
+  references:
+    version: 2
+    RefIds:
+    - rid: 8418179282978996678
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1790178274062
