@@ -1,0 +1,91 @@
+﻿/* ─── Корневой контейнер ─────────────────────────────── */
+.chat-root {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: 420px;
+    max-height: 260px;
+    flex-direction: column;
+
+    /* не перехватывает клики по игре */
+    pointer-events: none;
+}
+
+/* ─── Лог сообщений ───────────────────────────────────── */
+.chat-log {
+    max-height: 240px;
+    min-height: 0;
+    flex-grow: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.chat-content {
+    flex-direction: column;
+    padding: 2px 0;
+}
+
+/* ─── Одна строка чата (Minecraft-style) ──────────────── */
+.chat-line {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 2px 6px;
+    margin: 0 0 2px 0;
+    white-space: normal;
+
+    /* тень как в Minecraft — читаемость на любом фоне */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.85);
+
+    /* полупрозрачная плашка под текстом */
+    background-color: rgba(0, 0, 0, 0.35);
+
+    -unity-text-align: middle-left;
+    -unity-font-style: normal;
+
+    /* перенос длинных строк */
+    flex-shrink: 1;
+}
+
+/* окраска сендера (можно выдавать класс из C#) */
+.chat-line .sender           { color: rgb(85, 255, 85); }
+.chat-line .sender-system    { color: rgb(255, 255, 85); }
+
+/* ─── Поле ввода ──────────────────────────────────────── */
+.chat-input {
+    display: none;                 /* скрыто, пока чат закрыт */
+    margin-top: 4px;
+    pointer-events: auto;          /* когда открыт — ловит клики */
+
+    background-color: rgba(0, 0, 0, 0.55);
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+    padding: 2px 4px;
+}
+
+.chat-input > .unity-text-field__input {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border-width: 0;
+    font-size: 14px;
+    padding: 2px 4px;
+}
+
+.chat-input > .unity-text-field__input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+    -unity-font-style: italic;
+}
+
+.chat-input > .unity-text-field__input:focus {
+    border-width: 0; /* убираем голубое свечение фокуса */
+}
+
+/* ─── Активное состояние (открыто на T) ───────────────── */
+.chat-root.chat-active {
+    pointer-events: auto;
+}
+.chat-root.chat-active .chat-input {
+    display: flex;
+}

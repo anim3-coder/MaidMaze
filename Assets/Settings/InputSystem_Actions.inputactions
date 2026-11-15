@@ -1052,6 +1052,35 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Chat",
+            "id": "57b8e64b-272b-4aff-8570-826137e57558",
+            "actions": [
+                {
+                    "name": "Open",
+                    "type": "Button",
+                    "id": "4bea38dd-b104-4d57-854c-5005949cef73",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ee0c7756-e87d-4aaa-9ab6-b4b36f459c5d",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -11,13 +11,50 @@ public class Player : NetworkBehaviour
 
     [SerializeField] private Body body;
     public static event Action<Player> OnStartLocalPlayerEvent;
+
     public override void OnStartLocalPlayer()
     {
         current = this;
         CreateBody();
         SetName(Setup.profile.PlayerName);
         OnStartLocalPlayerEvent?.Invoke(this);
+
+        var ui = FindAnyObjectByType<ChatUI>();
+        if (ui != null)
+        {
+            ui.OnLocalSubmit += SendChat;          // UI → сеть
+            OnChatMessage += ui.ReceiveMessage;  // сеть → UI
+        }
     }
+
+    #region Chat
+    public static event Action<string, string> OnChatMessage;
+
+    /// <summary>Клиентская точка входа: вызывается из ChatUI.</summary>
+    public void SendChat(string message)
+    {
+        if (!isOwned) return;    // Command разрешён только владельцу
+        CmdSendChat(message);
+    }
+
+    [Command]
+    private void CmdSendChat(string message)
+    {
+        // Валидация на сервере — нельзя доверять клиенту
+        if (string.IsNullOrWhiteSpace(message)) return;
+
+        string sender = string.IsNullOrEmpty(_name) ? "Unknown" : _name;
+
+        RpcReceiveChat(sender, message);
+    }
+
+    [ClientRpc]
+    private void RpcReceiveChat(string sender, string message)
+    {
+        OnChatMessage?.Invoke(sender, message);
+    }
+
+    #endregion
 
     #region Name
     [SyncVar(hook = nameof(OnNameChanged))]
@@ -57,6 +94,7 @@ public class Player : NetworkBehaviour
         NetworkServer.Spawn(go, connectionToClient); // виден только владельцу
 
         body = go.GetComponent<Body>();
+        body.playerNetId = netId;
         TargetSetBody(body.netId); // уходит ТОЛЬКО владельцу
     }
 
@@ -70,7 +108,6 @@ public class Player : NetworkBehaviour
         }
         else
         {
-            // На случай гонки сообщений — ждём
             StartCoroutine(WaitForBody(netId));
         }
     }

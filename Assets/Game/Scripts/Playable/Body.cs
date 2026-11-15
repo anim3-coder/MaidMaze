@@ -12,6 +12,7 @@ public class Body : NetworkBehaviour
     [SerializeField] private SpriteRenderer renderer;
     [SerializeField] private Animator animator;
     [SerializeField] private UI_PlayerName m_playerName;
+    [SyncVar] public uint playerNetId;
     private InputAction move;
     private InputActionAsset asset => InputSystem.actions;
     public void SetPlayerName(string v) => m_playerName.SetName(v);
@@ -41,6 +42,20 @@ public class Body : NetworkBehaviour
     {
         rig.bodyType = RigidbodyType2D.Dynamic;
         move = asset.FindAction("Move");
+    }
+
+    public Player GetPlayer()
+    {
+        if (NetworkClient.spawned.TryGetValue(playerNetId, out NetworkIdentity identity))
+        {
+            return identity.GetComponent<Player>();
+        }
+        return null; // Объект ещё не заспавнен на этом клиенте или невидим
+    }
+
+    public override void OnStartClient()
+    {
+        SetPlayerName(GetPlayer().Name);
     }
 
     private void Update()

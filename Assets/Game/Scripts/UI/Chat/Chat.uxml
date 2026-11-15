@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game/Scripts/UI/Chat/Chat.uss?fileID=7433441132597879392&amp;guid=81c6db62b4b2e2048b800bfbcf5d6ecc&amp;type=3#Chat"/>
+    <ui:VisualElement name="chat-root" class="chat-root">
+        <ui:ScrollView name="chat-log" mode="Vertical" vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" class="chat-log">
+            <ui:VisualElement name="chat-content" class="chat-content"/>
+        </ui:ScrollView>
+        <ui:TextField name="chat-input" max-length="256" class="chat-input"/>
+    </ui:VisualElement>
+</ui:UXML>
