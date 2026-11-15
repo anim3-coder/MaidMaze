@@ -11,9 +11,10 @@ public class Body : NetworkBehaviour
     [SerializeField] private float speed;
     [SerializeField] private SpriteRenderer renderer;
     [SerializeField] private Animator animator;
+    [SerializeField] private UI_PlayerName m_playerName;
     private InputAction move;
     private InputActionAsset asset => InputSystem.actions;
-
+    public void SetPlayerName(string v) => m_playerName.SetName(v);
     #region linearVelocity
     [SerializeField] private float smoothing = 0.15f;
     private Vector2 lastPosition;

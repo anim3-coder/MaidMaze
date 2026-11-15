@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Game/Scripts/UI/Default.uss?fileID=7433441132597879392&amp;guid=d7547f06d15fd2040b0f7e59abff3d72&amp;type=3#Default"/>
+    <ui:Label text="MaxRandom90" name="name" class="default-text-field" style="width: auto; align-content: stretch; align-self: center; justify-content: center; align-items: center; flex-direction: row; -unity-text-align: middle-center; white-space: nowrap; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; text-overflow: clip;"/>
+</ui:UXML>

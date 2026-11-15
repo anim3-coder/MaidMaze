@@ -254,7 +254,7 @@
     border-right-width: 1px;
     border-top-width: 1px;
     border-bottom-width: 1px;
-    background-color: rgb(255, 126, 190);
+    background-color: var(--primary-color);
     -unity-background-image-tint-color: rgb(255, 255, 255);
     -unity-background-scale-mode: stretch-to-fill;
     background-position-y: center;
