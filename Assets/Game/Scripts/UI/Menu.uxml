@@ -3,7 +3,7 @@
     <ui:Template name="SettingsPanel" src="project://database/Assets/Game/Scripts/UI/Settings/SettingsPanel.uxml?fileID=9197481963319205126&amp;guid=3c2af211945bc2847aa9e5a642d6cf8f&amp;type=3#SettingsPanel"/>
     <Style src="project://database/Assets/Game/Scripts/UI/Default.uss?fileID=7433441132597879392&amp;guid=d7547f06d15fd2040b0f7e59abff3d72&amp;type=3#Default"/>
     <ui:VisualElement name="List" picking-mode="Position" style="flex-grow: 1; flex-direction: column; justify-content: center; align-items: stretch; width: 15%; flex-wrap: nowrap; right: 59px; bottom: 0; top: 0; left: 0; position: relative; align-self: flex-end; align-content: stretch; margin-right: 60px; margin-top: 30px; margin-bottom: 30px; margin-left: 30px; padding-right: 0; transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s;">
-        <ui:Label text="Ля чебукек" enable-rich-text="false" emoji-fallback-support="false" class="Logo" style="opacity: 1; flex-direction: column; flex-wrap: nowrap; text-shadow: 5px 5px 0 rgb(0, 135, 81);"/>
+        <ui:Label text="Mind&#10;Maze" enable-rich-text="false" emoji-fallback-support="false" class="Logo" style="opacity: 1; flex-direction: column; flex-wrap: nowrap; text-shadow: 5px 5px 0 rgb(0, 135, 81);"/>
         <LocalizedButton text="Play" name="Play" key="play_button" class="default-button">
             <Bindings>
                 <UnityEngine.Localization.LocalizedString property="text" table="GUID:d697420ce0149ab4aadbc783c6165e97" entry="Id(107405692928)"/>

@@ -25,6 +25,11 @@
         </ui:VisualElement>
         <ui:VisualElement name="Tab_Main" class="tab-content tab-active">
             <ui:ScrollView class="tab-scroll">
+                <ui:TextField label="Name" placeholder-text="Player" name="TextField" value="Player" class="default-text-field" style="width: auto; background-color: var(--primary-color);">
+                    <Bindings>
+                        <ui:DataBinding property="value" data-source="project://database/Assets/Resources/Settings.asset?fileID=11400000&amp;guid=2d64c267e6542624297a9f887b1f944a&amp;type=2#Settings" data-source-path="PlayerName" binding-mode="TwoWay"/>
+                    </Bindings>
+                </ui:TextField>
                 <ui:DropdownField name="Language_Dropdown" choices="" index="2" focusable="false" label="Language" class="settings-dropdown" style="-unity-text-generator: standard;"/>
             </ui:ScrollView>
         </ui:VisualElement>

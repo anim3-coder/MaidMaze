@@ -113,6 +113,21 @@ public class SettingsProfile : ScriptableObject, IDataSourceViewHashProvider
             PlayerPrefs.SetInt("UpscalingFilter", (int)value);
         }
     }
+    public static string PlayerDefaultName;
+    [CreateProperty, ShowInInspector] public string PlayerName
+    {
+        get
+        {
+            if(PlayerDefaultName == null)
+                PlayerDefaultName = GenerateRandomName();
+            return PlayerPrefs.GetString("player_name", PlayerDefaultName);
+        }
+        set
+        {
+            PlayerPrefs.SetString("player_name", value);
+            PlayerPrefs.Save();
+        }
+    }
     [CreateProperty, ShowInInspector] public int UpscalingFilterSelection
     {
         get
@@ -198,5 +213,27 @@ public class SettingsProfile : ScriptableObject, IDataSourceViewHashProvider
     {
         float multiplier = Mathf.Pow(10, decimalPlaces);
         return Mathf.Round(value * multiplier) / multiplier;
+    }
+
+    // Списки для генерации
+    private static readonly string[] FirstNames =
+    {
+        "John", "Mike", "Alex", "Max", "Nick", "Sam", "Leo", "Dan",
+        "Kate", "Anna", "Lily", "Emma", "Sara", "Mia", "Zoe", "Ivy"
+    };
+
+    private static readonly string[] LastNames =
+    {
+        "Hook", "Smith", "Stone", "Wolf", "Fox", "Kane", "Reed", "Cole",
+        "Hart", "Gray", "Shaw", "Cross", "Frost", "Wild", "Storm"
+    };
+
+    private static string GenerateRandomName()
+    {
+        string first = FirstNames[Random.Range(0, FirstNames.Length)];
+        string last = LastNames[Random.Range(0, LastNames.Length)];
+        int number = Random.Range(100, 1000); // 100..999
+
+        return $"{first}{last}{number}"; // JohnHook123
     }
 }

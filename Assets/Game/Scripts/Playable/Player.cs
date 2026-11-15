@@ -1,5 +1,6 @@
 ﻿using Mirror;
 using System;
+using System.Collections;
 using System.Security.Principal;
 using UnityEngine;
 
@@ -8,14 +9,42 @@ public class Player : NetworkBehaviour
     [SerializeField] private GameObject prefab;
     public static Player current { get; private set; }
 
-    [SerializeField] public Body body;
+    [SerializeField] private Body body;
     public static event Action<Player> OnStartLocalPlayerEvent;
     public override void OnStartLocalPlayer()
     {
         current = this;
         CreateBody();
+        SetName(Setup.profile.PlayerName);
         OnStartLocalPlayerEvent?.Invoke(this);
     }
+
+    #region Name
+    [SyncVar(hook = nameof(OnNameChanged))]
+    private string _name;
+    public string Name => _name;
+
+    private void OnNameChanged(string oldValue, string newValue)
+    {
+        if (body != null)
+            body.SetPlayerName(newValue);
+        else
+            StartCoroutine(IEOnNameChanged(newValue));
+    }
+
+    private IEnumerator IEOnNameChanged(string v)
+    {
+        while (body == null)
+            yield return null;
+        body.SetPlayerName(v);
+    }
+
+    [Command]
+    public void SetName(string newName)
+    {
+        _name = newName;
+    }
+    #endregion
 
     #region CreateBody
     public static event Action<Body> OnCreateLocalBody;
