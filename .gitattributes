@@ -54,3 +54,6 @@
 *.asset merge=unityyamlmerge
 *.meta merge=unityyamlmerge
 *.controller merge=unityyamlmerge
+
+# EOL
+* text=auto
