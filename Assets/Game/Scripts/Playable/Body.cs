@@ -10,10 +10,9 @@ public class Body : NetworkBehaviour
     [SerializeField] private Rigidbody2D rig;
     [SerializeField] private float speed;
     [SerializeField] private SpriteRenderer renderer;
-    [Space]
-    [SerializeField] private InputActionAsset asset;
-    [SerializeField] private float s;
+    [SerializeField] private Animator animator;
     private InputAction move;
+    private InputActionAsset asset => InputSystem.actions;
 
     #region linearVelocity
     [SerializeField] private float smoothing = 0.15f;
@@ -46,14 +45,32 @@ public class Body : NetworkBehaviour
     private void Update()
     {
         if (isOwned)
+            UpdateOwned();
+        else
+            UpdateOther();
+
+        if (math.abs(linearVelocity.x) > 0)
         {
-            rig.linearVelocity = new Vector2(move.ReadValue<Vector2>().x * speed, rig.linearVelocity.y);
+            animator.SetBool("IsWalk", true);
+            renderer.flipX = linearVelocity.x > 0 ? false : true;
         }
         else
         {
-            UpdateLV();
+            animator.SetBool("IsWalk", false);
         }
-        if (math.abs(linearVelocity.x) > 0)
-            renderer.flipX = linearVelocity.x > 0 ? false : true;
+    }
+    /// <summary>
+    /// Обновление только для владельца тела
+    /// </summary>
+    private void UpdateOwned()
+    {
+        rig.linearVelocity = new Vector2(move.ReadValue<Vector2>().x * speed, rig.linearVelocity.y);
+    }
+    /// <summary>
+    /// Обновление для всех кто не владелец
+    /// </summary>
+    private void UpdateOther()
+    {
+        UpdateLV();
     }
 }
