@@ -1,4 +1,6 @@
 :root {
+    --primary-color: rgb(0, 211, 126);
+    --secondary-color: rgb(0, 134, 80);
 }
 
 .default-button {
@@ -10,7 +12,7 @@
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
-    background-color: rgb(255, 126, 190);
+    background-color: var(--primary-color);
     -unity-background-image-tint-color: rgb(255, 255, 255);
     -unity-background-scale-mode: stretch-to-fill;
     background-position-y: center;
@@ -35,7 +37,7 @@
     scale: 1.1 1.1 1.1;
     transition-duration: 100ms;
     transition-delay: 0ms;
-    background-color: rgb(204, 101, 152);
+    background-color: var(--secondary-color);
     color: rgb(242, 242, 242);
     -unity-text-outline-color: rgb(242, 242, 242);
     border-left-color: rgb(242, 242, 242);
