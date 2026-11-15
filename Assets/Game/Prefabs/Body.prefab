@@ -116,8 +116,8 @@ MonoBehaviour:
   rig: {fileID: 2583626577510885344}
   speed: 4
   renderer: {fileID: 1660126253482496235}
-  asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  s: 0
+  animator: {fileID: 32439536608884780}
+  smoothing: 0.15
 --- !u!114 &8208321076961922777
 MonoBehaviour:
   m_ObjectHideFlags: 0
