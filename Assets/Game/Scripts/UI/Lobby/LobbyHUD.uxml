@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="LobbyHUD.uss" />
+    <ui:VisualElement name="lobby-root" class="lobby-root" picking-mode="Ignore">
+        
+        <!-- Верхняя панель: количество игроков -->
+        <ui:VisualElement name="top-container" class="top-container" picking-mode="Ignore">
+            <ui:VisualElement name="players-badge" class="hud-badge players-badge" picking-mode="Ignore">
+                <ui:Label name="players-count-label" text="Игроки: 1/4" class="hud-text players-text" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Нижний правый угол: код лобби -->
+        <ui:VisualElement name="bottom-right-container" class="bottom-right-container" picking-mode="Ignore">
+            <ui:Label name="copy-hint-label" text="Код скопирован!" class="copy-hint" picking-mode="Ignore" />
+            <ui:Button name="lobby-code-button" class="hud-badge lobby-code-button" tooltip="Нажмите, чтобы скопировать код">
+                <ui:Label name="lobby-code-title" text="Код лобби:" class="hud-text lobby-code-title" picking-mode="Ignore" />
+                <ui:Label name="lobby-code-value" text="-----" class="hud-text lobby-code-value" picking-mode="Ignore" />
+            </ui:Button>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>
