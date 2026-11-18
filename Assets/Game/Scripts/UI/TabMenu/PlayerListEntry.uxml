@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement name="player-entry" class="player-entry">
+        <ui:VisualElement name="player-avatar" class="player-avatar" />
+        <ui:VisualElement class="player-info">
+            <ui:Label name="player-name-label" text="PlayerName" class="player-name" />
+            <ui:Label name="player-status-label" text="Готов" class="player-status" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="player-list-container" class="player-list-container">
+        <ui:Label text="Игроки в лобби" class="player-list-title" />
+        <ui:ListView name="player-list-view"
+                     virtualization-method="DynamicHeight"
+                     selection-type="None"
+                     fixed-item-height="60" />
+    </ui:VisualElement>
+</ui:UXML>
